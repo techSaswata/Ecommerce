@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce-backend
+  
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb+srv://techsaswata:sas19454745wata@cluster0.1ht9bbx.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0}
+      database: ecommerce
+
+# Razorpay Configuration - Load from environment variables or secrets file
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID:rzp_test_S5qSQsy1vpjoVg}
+  key-secret: ${RAZORPAY_KEY_SECRET:v8InSWMuy6UqxctOAKGkYOrG}
+  webhook-secret: ${RAZORPAY_WEBHOOK_SECRET:not_configured_use_mock_webhook}
+
+# Application Configuration
+app:
+  webhook:
+    base-url: ${WEBHOOK_BASE_URL:http://localhost:8080}
+  
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.ecommerce: DEBUG
+    org.springframework.data.mongodb: DEBUG
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
