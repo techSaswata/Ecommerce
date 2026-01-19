@@ -339,9 +339,9 @@ Step 5: ORDER FULFILLMENT
 
 ---
 
-## API Postman Collection
+<!-- ## API Postman Collection
 
-**Postman Collection:** [https://college-bytes-s-team.postman.co/workspace/Team-Workspace~24d4dcc0-5f16-4eab-80de-a437e617b755/request/47962954-b2039d61-4bd4-4144-83cf-b6ce2b0629e3?action=share&creator=47962954&ctx=documentation](https://college-bytes-s-team.postman.co/workspace/Team-Workspace~24d4dcc0-5f16-4eab-80de-a437e617b755/request/47962954-b2039d61-4bd4-4144-83cf-b6ce2b0629e3?action=share&creator=47962954&ctx=documentation)
+**Postman Collection:** [https://college-bytes-s-team.postman.co/workspace/Team-Workspace~24d4dcc0-5f16-4eab-80de-a437e617b755/request/47962954-b2039d61-4bd4-4144-83cf-b6ce2b0629e3?action=share&creator=47962954&ctx=documentation](https://college-bytes-s-team.postman.co/workspace/Team-Workspace~24d4dcc0-5f16-4eab-80de-a437e617b755/request/47962954-b2039d61-4bd4-4144-83cf-b6ce2b0629e3?action=share&creator=47962954&ctx=documentation) -->
 
 **API Responses:** See `Ecommerce Backend.postman_collection.json` for complete request/response.
 
