@@ -165,7 +165,7 @@ src/main/resources/
 └────────────────┘
 
 ┌────────────────┐         ┌────────────────┐         ┌────────────────┐
-│     ORDER      │         │   ORDER_ITEM   │         │    PAYMENT     │
+│     ORDER      │         │   ORDER_ITEM   │         │    PAYMENT     │ 
 ├────────────────┤         ├────────────────┤         ├────────────────┤
 │ id (PK)        │◄────────│ orderId (FK)   │         │ id (PK)        │
 │ userId (FK)    │         │ productId      │         │ orderId (FK)───┼──►
