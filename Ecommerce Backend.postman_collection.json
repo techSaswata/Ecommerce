@@ -1,0 +1,886 @@
+{
+	"info": {
+		"_postman_id": "883776fb-cbd1-47da-aa63-bc86a9895376",
+		"name": "Ecommerce Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47962954",
+		"_collection_link": "https://college-bytes-s-team.postman.co/workspace/Team-Workspace~24d4dcc0-5f16-4eab-80de-a437e617b755/collection/47962954-883776fb-cbd1-47da-aa63-bc86a9895376?action=share&source=collection_link&creator=47962954"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Laptop\",\n    \"description\": \"Gaming Laptop\",\n    \"price\": 50000.0,\n    \"stock\": 30\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/696e832a13ed464527c2600a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"696e832a13ed464527c2600a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item to Cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"user123\",\n    \"productId\": \"696e832a13ed464527c2600a\",\n    \"quantity\": 2\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User's cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart/user123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"user123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cart Item Quantity",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantity\": 3\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/user123/items/696e832a13ed464527c2600a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"user123",
+						"items",
+						"696e832a13ed464527c2600a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item from Cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart/user123/items/696e832a13ed464527c2600a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"user123",
+						"items",
+						"696e832a13ed464527c2600a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear User's Cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart/user123/clear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"user123",
+						"clear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order from Cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"user123\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order with Shipping Address",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"user123\",\n    \"shippingAddress\": \"123 Main Street, City, State 12345\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/696e8f9913ed464527c26016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"696e8f9913ed464527c26016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all orders (Admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Payment for Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"696e8f9913ed464527c26016\",\n    \"amount\": 100000.0\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify payment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"razorpayOrderId\": \"order_S5qjW2ec4g1Tgg\",\n    \"razorpayPaymentId\": \"pay_XXXXXXXXXXXXX\",\n    \"razorpaySignature\": \"signature_from_razorpay\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment by Order ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payments/order/696e833113ed464527c2600c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"order",
+						"696e833113ed464527c2600c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Razorpay Config",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payments/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Razorpay Webhook",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Razorpay-Signature",
+						"value": "{signature}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event\": \"payment.captured\",\n    \"payload\": {\n      \"payment\": {\n        \"entity\": {\n          \"id\": \"pay_razorpay123\",\n          \"order_id\": \"order_xyz\",\n          \"status\": \"captured\"\n        }\n      }\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/webhooks/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"webhooks",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mock Webhook for Local Test",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"razorpayOrderId\": \"order_S5qjW2ec4g1Tgg\",\n    \"status\": \"success\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/webhooks/payment/mock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"webhooks",
+						"payment",
+						"mock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mock Webhook Payment Failed",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"razorpayOrderId\": \"order_S5qjW2ec4g1Tgg\",\n    \"status\": \"failed\",\n    \"failureReason\": \"Insufficient funds\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/webhooks/payment/mock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"webhooks",
+						"payment",
+						"mock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order History",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/user/user123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"user",
+						"user123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/696e8f9913ed464527c26016/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"696e8f9913ed464527c26016",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Search",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/search?q=laptop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "laptop"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"john_doe\",\n    \"email\": \"john@example.com\",\n    \"role\": \"USER\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/user123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"user123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/category/Electronics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"category",
+						"Electronics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Products Only",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/active",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Gaming Laptop Pro\",\n    \"price\": 55000.0,\n    \"stock\": 15\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/696e832a13ed464527c2600a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"696e832a13ed464527c2600a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/696e832a13ed464527c2600a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"696e832a13ed464527c2600a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
